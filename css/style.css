@@ -1,0 +1,524 @@
+html, body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%; 
+}
+body {
+  box-sizing: border-box; 
+}
+
+/** Navbar styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav img{
+    width: 90px;
+    height: auto;
+}
+nav button{
+    width: 90px;
+    height: auto;
+}
+/* nav .shoppingCard{
+    font-size: 24px;
+} */
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  padding: 12px;
+  margin: 0;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  /* color: white; */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .navbar {
+    flex-direction: column; 
+    gap: 20px; 
+  }
+}
+
+
+
+/** banner */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 0px 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  text-align: left;
+}
+
+.content p {
+  line-height: 1.6;
+}
+
+.content .bannerTitle {
+  font-size: 54px;
+}
+
+.content .bannerBooks {
+  color: red;
+}
+
+.content h2 {
+  font-size: 24px;
+  color: red;
+  font-style: italic;
+}
+
+.image-container {
+  flex: 1;
+  position: relative;
+}
+
+.orange-circle {
+  width: 450px;
+  height: 450px;
+  background-color: #FFA500;
+  border-radius: 50%;
+  position: absolute;
+  right: 0%;
+  top: 40%;
+  transform: translateY(-50%);
+  /* z-index: 10; */
+}
+
+.student-image {
+  position: relative;
+  z-index: 2;
+  width: 500px;
+  height: 519px;
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+}
+
+.button {
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.primary-button {
+  background-color: #6A5ACD;
+  color: white;
+}
+
+.secondary-button {
+  background-color: white;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .content {
+    order: 2; /* Show content below the image on mobile */
+    text-align: justify;
+  }
+
+  .content .bannerTitle {
+    font-size: 36px; /* Adjust font size for mobile */
+  }
+
+  .content h2 {
+    font-size: 18px; /* Adjust font size for mobile */
+  }
+
+  .orange-circle {
+    width: 300px;
+    height: 300px;
+    right: auto;
+    left: 50%;
+    top: 10;
+    transform: translate(-50%, -50%);
+  }
+
+  .student-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .content .bannerTitle {
+    font-size: 28px;
+  }
+
+  .content h2 {
+    font-size: 16px;
+  }
+
+  .orange-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .button {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+
+
+
+/* * books classes */
+.book-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 55px;
+}
+
+.book-heading .search-input {
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.book-heading h1 {
+  font-size: 30px;
+}
+
+/* dropdown */
+/* Dropdown button styling */
+.dropbtn {
+  background-color: #6A5ACD;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Dropdown content styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content .dropdown-section {
+  padding: 12px;
+  /* border: 2px black; */
+}
+
+.dropdown-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-content ul li {
+  padding: 8px 0;
+}
+
+.dropdown-content ul li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown content when hovering over the dropdown */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Responsive layout for .book-heading section */
+@media (max-width: 768px) {
+  .book-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .book-heading h1 {
+    font-size: 24px;
+    margin-bottom: 15px; 
+  }
+
+  .book-heading .search-input {
+    width: 95%;
+    margin-bottom: 15px; 
+  }
+
+  .dropbtn {
+    width: 100%;
+  }
+}
+
+
+
+/* * toast  */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  right: 30px;
+  top: 30px;
+  font-size: 17px;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+/* Book list styling */
+/* .book-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  
+} */
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row on large screens */
+  gap: 10px;
+  justify-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.book-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  width: 270px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  transition: border 0.3s ease;
+}
+
+.wishlist-icon {
+  background-color: gray;
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+.book-item:hover {
+  border: 1px solid red;
+}
+
+.book-item img {
+  max-width: 100%;
+  height: 300px;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+}
+
+.book-item h2 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.book-item p {
+  margin: 5px 0;
+  font-size: 17px;
+  color: #555;
+}
+
+.book-item .id {
+  color: #888;
+  font-size: 12px;
+}
+
+/* Responsive layout for mobile devices */
+@media (max-width: 768px) {
+  .book-list {
+    grid-template-columns: repeat(2, 1fr); 
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-list {
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .book-item {
+    width: 90%; /* Full width for mobile */
+  }
+}
+
+
+
+/* pagination */
+/* Margin top for the container */
+
+
+/* Flexbox for pagination */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin: 50px;
+  padding-bottom: 32px;
+}
+
+/* Shared styles for all pagination buttons */
+.pagination-btn {
+    margin: 0 4px;
+    padding: 8px 12px;
+    background-color: #e5e7eb;
+    color: #374151;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.pagination-btn:hover {
+    background-color: #3b82f6;
+    color: #e5e7eb;
+}
+
+/* Disabled button styles */
+.pagination-btn.disabled {
+    cursor: not-allowed;
+    color: #6b7280;
+}
+
+/* Active page button */
+.pagination-btn.active {
+    background-color: #3b82f6;
+    color: white;
+}
+
+
+
+
+
+
+
+
+/* animation */
+/* Loading screen styling */
+.loading-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Center the Lottie animation */
+#lottie-animation {
+    width: 300px;
+    height: 300px;
+}
+
+/* Main content hidden initially */
+#content {
+    padding: 20px;
+    display: none;
+}
+
+
+
+/* wishlist icons */
+.wishlist-icon {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.wishlist-icon.liked {
+  color: red;
+}
+
+.wishlist-icon.unliked {
+  color: gray;
+}

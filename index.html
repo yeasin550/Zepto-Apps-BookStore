@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/067063e19d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading" class="loading-container">
+        <div id="lottie-animation"></div>
+    </div>
+
+
+    <header>
+        <nav>
+            <img src="assets/logo.png" alt="Student with books" />
+            <ul class="navbar">
+                <li><a href="#" id="homeLink">Home</a></li>
+                <!-- <li><a href="#">Categories</a></li> -->
+                <!-- <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>Wishlist</a></li> -->
+                <li><a href="#" id="wishlistLink"><i class="fa-solid fa-cart-shopping"></i> Wishlist</a></li>
+
+                <li><a href="#" id="bookPageLink">Book Page</a></li>
+                
+            </ul>
+            <button href="#" class="button primary-button">Booked</button>
+        </nav>
+    </header>
+
+   
+
+
+    <!-- Placeholder for the Book Page content (initially hidden) -->
+    <div id="content" style="display: none;"></div>
+    <!-- <div id="wishlistContainer" class="wishlist-container"></div> -->
+    <div id="book-list"></div>
+    
+
+<!-- Home content visible -->
+    <section id="homeContent">
+
+        <!-- banner -->
+        <div class="container">
+            <div class="content">
+                <!-- <h2>BACK TO SCHOOL</h2> -->
+                <h2 class="">Special 50% Off</h2>
+                <h1 class="bannerTitle">Get Your New <span class="bannerBooks">Books</span> Collection!!</h1>
+                <p>Books are valuable sources of knowledge and imagination, offering readers insights into different worlds,
+                    perspectives, and cultures. They range from fiction to nonfiction, covering various genres like mystery,
+                    history, and fantasy, allowing individuals to explore ideas, learn, and grow creatively.</p>
+                <div class="button-container">
+                    <a href="#" class="button primary-button">Explore More →</a>
+                    <a href="#" class="button secondary-button">See other promos</a>
+                </div>
+            </div>
+            <div class="image-container">
+                <div class="orange-circle"></div>
+                <img src="assets/banner.png" alt="Student with books" class="student-image">
+            </div>
+        </div>
+    
+        <!-- all books here -->
+    
+        <div class="book-heading">
+            <h1 class="">All Book List</h1>
+            <div>
+                <input class="search-input" type="text" name="" id="" placeholder="Search">
+                <div class="dropdown">
+                    <button class="dropbtn">Default Filter</button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-section">
+                            <strong>All</strong>
+                            <ul id="all-book-list"></ul>
+                        </div>
+                        <div class="dropdown-section">
+                            <strong>Filter By Genres</strong>
+                            <ul id="genre-list"></ul>
+                        </div>
+                        <div class="dropdown-section">
+                            <strong>Filter By Topics</strong>
+                            <ul id="topic-list"></ul>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        <!-- Container to display the book list -->
+        <div id="bookList" class="book-list"></div>
+    
+        <!-- pagination -->
+    
+    
+        <div class="pagination">
+            <a href="#" class="pagination-btn" id="previous-btn">
+                Previous
+            </a>
+    
+            <a href="#" class="pagination-btn" id="page-1">1</a>
+            <a href="#" class="pagination-btn" id="page-2">2</a>
+            <a href="#" class="pagination-btn" id="page-3">3</a>
+    
+            <a href="#" class="pagination-btn" id="next-btn">
+                Next
+            </a>
+        </div>
+
+        <div>
+            this is footer
+            
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+    <!-- Link to the JavaScript file -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
