@@ -38,23 +38,15 @@ const Navbar = () => {
                     >
                         WishList
                     </NavLink>
-                    {/* <NavLink
-                        to="/book-page"
-                        className={({ isActive }) =>
-                            `text-gray-800 hover:text-purple-700 ${isActive ? 'font-bold text-purple-700' : ''}`
-                        }
-                    >
-                        Book Page
-                    </NavLink> */}
                 </div>
 
                 {/* Enquire Now Button */}
                 <div className="hidden md:block">
                     <NavLink
-                        to="/explore"
-                        className="bg-white border hover:text-white px-4 border-[#F8AF56] py-2 rounded-md hover:bg-[#F8AF56] transition duration-300 text-[#F8AF56]"
+                        // to="/explore"
+                        className="border border-gray-500 px-4 py-2 rounded-md  transition duration-300 "
                     >
-                        Enquire Now
+                        <i className="fa-solid fa-cart-shopping"></i>
                     </NavLink>
                 </div>
 
@@ -85,21 +77,16 @@ const Navbar = () => {
                     >
                         WishList
                     </NavLink>
-                    {/* <NavLink
-                        to="/book-page"
-                        className={({ isActive }) =>
-                            `text-gray-800 hover:text-[#F8AF56] ${isActive ? 'font-bold text-[#F8AF56]' : ''}`
-                        }
-                    >
-                        Book Page
-                    </NavLink> */}
                    
-                    <NavLink
-                        to="/explore"
-                        className="bg-white border hover:text-white px-4 border-[#F8AF56] py-2 rounded-md hover:bg-[#F8AF56] transition duration-300 text-[#F8AF56]"
-                    >
-                        Enquire Now
-                    </NavLink>
+                    {/* Enquire Now Button */}
+                    <div className="hidden md:block">
+                        <NavLink
+                            // to="/explore"
+                            className="border border-gray-500 px-4 py-2 rounded-md  transition duration-300 "
+                        >
+                            <i className="fa-solid fa-cart-shopping"></i>
+                        </NavLink>
+                    </div>
                 </div>
             )}
         </nav>
