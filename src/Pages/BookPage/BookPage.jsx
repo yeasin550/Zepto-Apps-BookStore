@@ -20,14 +20,14 @@ const BookPage = () => {
     }, [id]); // Re-fetch if the ID changes
 
     if (!book) {
-        return <h1>Loading...</h1>; // Display loading state
+        return <h1 className="text-center font-bold text-2xl my-12">Loading...</h1>; // Display loading state
     }
 
     return (
         <div className="max-w-[1200px] mx-auto my-12 p-4 border border-purple-500 rounded-lg">
             <h1 className="text-3xl font-bold mb-4 flex items-center">{book.title} (<p><strong className="mr-2">ID:</strong> {book.id}</p>)
             </h1> 
-            <div className="md:flex gap-4">
+            <div className="md:flex gap-12">
                 <img src={book.formats['image/jpeg'] || 'https://via.placeholder.com/150'} alt={book.title} className="md:w-64 w-full h-auto rounded-sm shadow-md" />
                 <div className="md:w-2/3 text-lg space-y-2">
                     <p><strong className="mr-2">Author:</strong> {book.authors.length > 0 ? book.authors[0].name : 'Unknown'}</p>

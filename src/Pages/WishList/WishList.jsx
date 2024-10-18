@@ -33,7 +33,7 @@ const WishList = () => {
 
     return (
         <div className="max-w-[1200px] mx-auto my-12">
-            <h1 className="text-3xl font-bold text-center my-5">Your Wishlist</h1>
+            <h1 className="text-3xl font-bold my-5">Check out your favorite wishlist</h1>
             {wishlistBooks.length > 0 ? (
                 <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
                     {wishlistBooks.map(book => (
@@ -67,7 +67,7 @@ const WishList = () => {
                             {/* Love Icon to Remove from Wishlist */}
                             <button 
                                 onClick={() => handleRemoveFromWishlist(book.id)} 
-                                className="absolute top-2 right-2 focus:outline-none"
+                                className="absolute top-0 right-0 focus:outline-none"
                             >
                                 {wishlist.includes(book.id) ? (
                                     <HeartSolid className="w-6 h-6 text-red-500 hover:text-red-600" />
