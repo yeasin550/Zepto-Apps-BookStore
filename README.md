@@ -1,9 +1,5 @@
 # Zepto Apps BookStore
 
-
-# - [Visit Website Live](https://github.com](https://superlative-rugelach-267c18.netlify.app/))
-
-
 ## How to Get Started
 
 1. Clone the repository:
