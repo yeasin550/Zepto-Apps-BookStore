@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const WishList = () => {
     const [books, setBooks] = useState([]);
@@ -66,20 +67,10 @@ const WishList = () => {
                                     <span className="font-bold">ID: </span> {book.id}
                                 </p>
 
-                                {/* <div className="mt-5">
-                                    <h2 className="text-xl mb-2 font-semibold">{book.title}</h2>
-                                    <p className="text-gray-700">
-                                        <span className="font-bold">Author:</span>
-                                        {book.authors.length > 0 ? book.authors[0].name : 'Unknown'}
-                                    </p>
-                                    <p className="text-gray-600">
-                                        <span className="font-bold">Genre: </span>
-                                        {book.subjects.length > 0 ? book.subjects[0] : 'N/A'}
-                                    </p>
-                                    <p className="text-gray-500">
-                                        <span className="font-bold">ID: </span> {book.id}
-                                    </p>
-                                </div> */}
+                                {/* Details Button */}
+                                <Link to={`/book-page/${book.id}`} className="border border-gray-800 px-3 rounded-md hover:bg-purple-700 hover:text-white mr-5 text-center">
+                                    Details
+                                </Link>
                             </div>
                         </div>
                     ))}

@@ -1,63 +1,54 @@
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const BookPage = () => {
+    const { id } = useParams(); // Get the dynamic ID from the URL
+    const [book, setBook] = useState(null);
+
+    useEffect(() => {
+        const fetchBookDetails = async () => {
+            try {
+                const response = await fetch(`https://gutendex.com/books/${id}`); // Fetch book details using the ID
+                const data = await response.json();
+                setBook(data); // Set the fetched book data
+            } catch (error) {
+                console.error('Error fetching book details:', error);
+            }
+        };
+
+        fetchBookDetails();
+    }, [id]); // Re-fetch if the ID changes
+
+    if (!book) {
+        return <h1>Loading...</h1>; // Display loading state
+    }
+
     return (
-        <div>
-            <div className="product-card">
-                <div className="product-image">
-                    <img src="https://img.freepik.com/free-photo/red-hardcover-book-front-cover_1101-833.jpg?t=st=1729003599~exp=1729007199~hmac=1db0d169dc06ae9f33434e8952f06180ed0d118b2b7ebe0af49fc612efe4e488&w=360" alt="About the First Night" />
-                </div>
-                <div className="product-info">
-                    <h2 className="product-title">1. Romeo and Juliet</h2>
-                    <h2 className="product-title">Author : William Shakespeare</h2>
-                    <p className="product-description">A long established fact that a reader will be distracted by the readable content
-                        of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                        distribution of letters, as opposed...</p>
-                    <div className="product-price">
-                        1564 - 1616_year
-                    </div>
-                    <div className="product-actions">
-                        {/* <!-- <button class="action-button">♡</button> --> */}
-                        <button className="action-button primary">Add to book</button>
-                        <button className="action-button primary">Buy to book</button>
-                        {/* <!-- <button class="action-button">↻</button> --> */}
-                    </div>
-                </div>
-            </div>
+        <div className="max-w-[1200px] mx-auto my-12 p-4 border border-purple-500 rounded-lg">
+            <h1 className="text-3xl font-bold mb-4 flex items-center">{book.title} (<p><strong className="mr-2">ID:</strong> {book.id}</p>)
+            </h1> 
+            <div className="flex gap-4">
+                <img src={book.formats['image/jpeg'] || 'https://via.placeholder.com/150'} alt={book.title} className="w-64 h-auto rounded-sm shadow-md" />
+                <div className="w-2/3 text-lg space-y-2">
+                    <p><strong className="mr-2">Author:</strong> {book.authors.length > 0 ? book.authors[0].name : 'Unknown'}</p>
+                    <p className="flex items-center"><strong className="mr-2">Birth & Death : </strong>
+                        <span className="flex items-center">
 
-
-
-            <div className="flex gap-4 max-w-md my-12 ml-12 border-2 border-red-600 p-4 bg-white rounded-lg">
-                {/* Book cover image */}
-                <div className="w-32 flex-shrink-0">
-                    <img
-                        src="https://img.freepik.com/free-photo/red-hardcover-book-front-cover_1101-833.jpg?t=st=1729003599~exp=1729007199~hmac=1db0d169dc06ae9f33434e8952f06180ed0d118b2b7ebe0af49fc612efe4e488&w=360"
-                        alt="Book Cover"
-                        className="w-full h-auto rounded-sm shadow-md"
-                    />
-                </div>
-
-                {/* Book details */}
-                <div className="flex flex-col flex-grow">
-                    {/* Kindle label */}
-                    <span className="text-sm text-pink-500 font-medium mb-1">
-                        KINDLE
-                    </span>
-
-                    {/* Book title */}
-                    <h2 className="text-lg font-medium text-gray-900 mb-1">
-                        Angry God (All Saints High Book 3)
-                    </h2>
-
-                    {/* Author name */}
-                    <p className="text-sm text-gray-600 mb-3">
-                        L.J. Shen
+                            {book.authors.length > 0 ? book.authors[0].birth_year : 'Unknown'} -
+                            {book.authors.length > 0 ? book.authors[0].death_year : 'Unknown'}
+                        </span>
                     </p>
-
-                    {/* Price section */}
-                    <div className="flex items-center gap-2">
-                        <span className="text-xl font-bold text-gray-900">$1.30</span>
-                        <span className="text-sm text-gray-500 line-through">$1.75</span>
-                    </div>
+                    <p><strong className="mr-2">Genres:</strong> {book.subjects.join(', ') || 'N/A'}</p>
+                    
+                    <p><strong className="mr-2">Downloaded:</strong>
+                        {book.download_count || 'Not available.'}
+                    </p>
+                    <p><strong className="mr-2">Subjects:</strong>
+                        {book.subjects || 'Not available.'}
+                    </p>
+                    <p><strong className="mr-2">Bookshelves:</strong>
+                        {book.bookshelves || 'Not available.'}
+                    </p>
                 </div>
             </div>
         </div>

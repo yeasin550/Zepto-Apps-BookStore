@@ -18,9 +18,10 @@ const router = createBrowserRouter([
                 element: <WishList/>,
             },
             {
-                path: "/book-page",
-                element: <BookPage/>,
-            },
+                path: "/book-page/:id", // Notice the ":id" here
+                element: <BookPage />,
+            }
+
         ]
     },
 ]);

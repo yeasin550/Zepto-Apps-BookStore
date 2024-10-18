@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -16,6 +17,7 @@ const BookCard = () => {
             try {
                 const response = await fetch('https://gutendex.com/books');
                 const data = await response.json();
+                // console.log(data.results)
                 setBooks(data.results);
             } catch (error) {
                 console.error('Error fetching books:', error);
@@ -156,7 +158,7 @@ const BookCard = () => {
                         currentBooks.map((book) => (
                             <div
                                 key={book.id}
-                                className="relative flex gap-4 max-w-md border border-gray-400 hover:border-red-600 p-4 bg-white rounded-lg"
+                                className="relative flex gap-4 max-w-md border border-gray-400 hover:border-red-600 p-4 bg-white rounded-lg h-[240px] overflow-hidden"
                             >
                                 {/* Wishlist Icon */}
                                 <div
@@ -196,9 +198,17 @@ const BookCard = () => {
                                         <span className="font-bold">Genre: </span>{' '}
                                         {book.subjects.length > 0 ? book.subjects[0] : 'N/A'}
                                     </p>
-                                    <p className="text-gray-500">
-                                        <span className="font-bold">ID: </span> {book.id}
-                                    </p>
+                                    <div className="flex items-center justify-between gap-5 text-gray-500">
+
+                                        <p>
+                                            <span className="font-bold">ID: </span> {book.id}
+                                        </p>
+                                        {/* Details Button */}
+                                        <Link to={`/book-page/${book.id}`} className="border border-gray-800 px-3 rounded-md hover:bg-purple-700 hover:text-white mr-5">
+                                            Details
+                                        </Link>
+
+                                    </div>
                                 </div>
                             </div>
                         ))

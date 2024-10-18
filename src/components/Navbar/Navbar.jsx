@@ -38,14 +38,14 @@ const Navbar = () => {
                     >
                         WishList
                     </NavLink>
-                    <NavLink
+                    {/* <NavLink
                         to="/book-page"
                         className={({ isActive }) =>
                             `text-gray-800 hover:text-purple-700 ${isActive ? 'font-bold text-purple-700' : ''}`
                         }
                     >
                         Book Page
-                    </NavLink>
+                    </NavLink> */}
                 </div>
 
                 {/* Enquire Now Button */}
@@ -85,14 +85,14 @@ const Navbar = () => {
                     >
                         WishList
                     </NavLink>
-                    <NavLink
+                    {/* <NavLink
                         to="/book-page"
                         className={({ isActive }) =>
                             `text-gray-800 hover:text-[#F8AF56] ${isActive ? 'font-bold text-[#F8AF56]' : ''}`
                         }
                     >
                         Book Page
-                    </NavLink>
+                    </NavLink> */}
                    
                     <NavLink
                         to="/explore"
