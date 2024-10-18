@@ -7,7 +7,7 @@ const Banner = () => {
             <div className="flex-1 text-left">
                 <h2 className="text-[24px] font-bold text-[#FF0000] italic">Special 50% Off</h2>
                 <h1 className="text-[30px] md:text-[54px] font-bold">
-                    Get Your New <span className="text-[#FF0000]">Books</span> Collection!!
+                    Get Your New <span className="text-[#FF0000]">Books</span> Collection!!!
                 </h1>
                 <p className="leading-6 mb-8">
                     Books are valuable sources of knowledge and imagination, offering readers insights into different worlds,
