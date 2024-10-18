@@ -1,8 +1,26 @@
-# React + Vite
+# Zepto Apps BookStore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# - [Visit Website Live](https://github.com](https://superlative-rugelach-267c18.netlify.app/))
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## How to Get Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yeasin550/Zepto-Apps-BookStore
+2. To install all the packages.
+3. Go to the terminal and command
+   ```bash
+     npm install
+4. After Installing all the packages. run npm run dev to start the site.
+   ```bash
+   npm run dev
+
+
+
+
+
+
+
+
